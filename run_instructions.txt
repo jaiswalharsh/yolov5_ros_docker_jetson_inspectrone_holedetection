@@ -1,0 +1,20 @@
+Make sure following is running on the UAV
+1. Pointcloud docker
+2. inspectrone.launch is launched
+
+
+STEPS to run:
+1. cd catkin_ws/
+
+Build new messages for publishing center point(NOT needed once Docker image is rebuilt)
+2. catkin_make
+
+Source workspace
+3. source devel/setup.bash
+
+export ROS_MASTER_URI variable
+4. export ROS_MASTER_URI=http://192.168.1.215:11311/ (FOR DTUDRONE1 or DRONE M)
+
+launch detector node
+5. roslaunch ros_pytorch_yolov5 detector.launch
+

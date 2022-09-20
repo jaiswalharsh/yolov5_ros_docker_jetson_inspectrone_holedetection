@@ -1,0 +1,30 @@
+# ARG BASE_IMAGE=nvcr.io/nvidia/l4t-ml:r32.5.0-py3
+
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-ml:r34.1.0-py3
+FROM ${BASE_IMAGE}
+
+ENV LANG C.UTF-8
+
+COPY yolov5/ yolov5/
+COPY requirements_jetson.txt yolov5/requirements_jetson.txt
+WORKDIR /yolov5
+
+RUN apt-get update -y && \
+    pip3 install -r requirements_jetson.txt
+
+#Install ROS
+#...
+
+#Copy & build yolo wrapper
+#...
+
+# RUN mkdir docker_yolov5 && \
+#     cd docker_yolov5/ && \
+#     git clone https://github.com/ultralytics/yolov5.git && \
+#     cd yolov5 && \
+#     git checkout 91547edec1a33121b3607e8c946e051514182b4f && \
+#     cd .. && \
+#     mv yolov5/ standard && \
+#     mkdir pytorch_hub
+
+

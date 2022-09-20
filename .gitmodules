@@ -1,0 +1,3 @@
+[submodule "inspectrone_msgs"]
+	path = inspectrone_msgs
+	url = git@ssh.dev.azure.com:v3/FORCEtechnology-RobotOS/Inspectrone/inspectrone_msgs
